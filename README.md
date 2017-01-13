@@ -1,2 +1,2 @@
 # INPLS-SED-2017-05
-Group repositoru for Software Engineering and Development project.
+Group repository for Software Engineering and Development project. Group 5.
