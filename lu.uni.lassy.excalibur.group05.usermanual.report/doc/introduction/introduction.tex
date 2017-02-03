@@ -57,12 +57,117 @@ Brief overview of the software application domain and main purpose.
 
 
 \subsection{Actors \& Functionalities}
-Overview of all the \textbf{\emph{\glspl{actor}}} interacting with the software
-being them either humans (called end-users in the standard
-\cite{IEEE-2001-userdocumentation}) or not. For each actor, describe the main
-software functions that are offered to him. Structure of this sub-section MUST
-be by actor/functionalities.
 
+% Overview of all the \textbf{\emph{\glspl{actor}}} interacting with the software
+% being them either humans (called end-users in the standard
+% \cite{IEEE-2001-userdocumentation}) or not. For each actor, describe the main
+% software functions that are offered to him. Structure of this sub-section MUST
+% be by actor/functionalities.
+
+\subsubsection{Communication Company}
+A company that has the capacity to ensure communication of information between
+its customers and the \mysystemname system. 
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+  \item deliver SMS about possible crisis got from witness or victim to the
+  \mysystemname's phone number in form of alert
+  \item be notified when handling alert by Coordinator of \mysystemname system,
+  sent by the Communication Company previously, is in progress
+  \item transmit SMS messages from company that owns \mysystemname system to any
+  human having an SMS compatible device accessible using a phone number
+\end{itemize}
+
+\subsubsection{Human}
+Any person who considers himself related to a car crash either as a
+witness, a victim or an anonymous person. 
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+  \item inform the \mysystemname system about the crisis situation he detected
+  by sending SMS with information about the crisis to some Communication Company
+  which will send an alert to \mysystemname system
+  \item be notified that the ABC company has been informed about the situation
+  \item be informed about the situation of the crisis he/she has related to as a
+  victim or witness
+  \item get QA survey (set of satisfaction single choice text questions with
+  possible mark answer for each from 0 to 5) by SMS message when a crisis,
+  associated with this Human, processed by \mysystemname's Coordinator. QA
+  survey will be open (\mysystemname system will wait answer from Human) for 5
+  hours.
+  \item answer obtained QA survey by sending reply in form of corresponding
+  mark-answers for each question separated by spaces
+\end{itemize}
+
+\subsubsection{Coordinator}
+An employee of the company, owning \mysystemname system, being responsible of
+handling one or several crisis.
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+  \item authenticate in \mysystemname system by providing valid (present in the
+  system) login/password and, if login/password pair is valid, pressing on
+  fingerprint scanner with his finger in special mobile app in the following 60
+  seconds
+  \item observe alerts by their status (pending/valid/invalid)
+  \item observe crises by their status (pending/handled/solved/closed)
+  \item validate/invalidate pending alert (mark alert as real or not)
+  \item handle crisis
+  \item leave free text comment on crisis
+  \item change crisis's status
+  \item close crisis (make crisis's status equal to 'closed')
+\end{itemize}
+
+\subsubsection{Administrator}
+An employee of the company, owning \mysystemname system, being responsible of
+administrating the system. 
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+  \item authenticate in \mysystemname system by providing valid (present in the
+  system) login/password and, if login/password pair is valid, pressing on
+  fingerprint scanner with his finger in special mobile app in the following 60
+  seconds
+  \item add or delete coordinators from the system and its environment
+  \item be notified about intrusions (when some person tried to authenticate as
+  an Coordinator, but provided invalid (not stored in \mysystemname system)
+  login/password pair or his fingerprint scan didn't match one associated with
+  corresponding (defined by login/password pair) coordinator)
+  \item visualize satisfaction diagrams in form of eye chart showing relative
+  amounts of each type of mark of for given QA survey question. The
+  administrator can see such chart of question for all crises or for only
+  specified one.
+\end{itemize}
+
+\subsubsection{Creator}
+A technician who is installing the \mysystemname system on the targeted
+deployment infrastructure.
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+  \item install the \mysystemname system
+  \item define the values for the initial system’s state
+  \item define the values for the initial system’s environment
+\end{itemize}
+
+\subsubsection{Activator}
+A logical representation of the active part the \mysystemname system.
+It represents an implicit stakeholder belonging to the system’s environment
+that interacts with the iCrash system autonomously without the need of a
+external entity. It is usually used for representing time triggered functionalities.
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+  \item communicate the current time to the system
+  \item notify the administrator that some crisis are still pending for a too
+  long time
+\end{itemize}
 
 \subsection{Operating environment}
 Brief overview of the infrastructure on which the software is deployed and used.
