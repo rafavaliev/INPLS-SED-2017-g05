@@ -65,6 +65,33 @@ with ID equal to 1.
 \hrule
 \vspace{0.5cm}
 
+% \hrule
+% \begin{lyxlist}{PC1}
+% \small{
+% \item [\textbf{Procedure:}] 
+% \item [\textbf{Scope:}] system
+% \item [\textbf{Primary Actor}:] 
+% \item [\textbf{Secondary Actor(s)}:] 
+% \item [\textbf{Goal:}] 
+% \item [\textbf{Level}:] \ldots level
+% \item [\textbf{Main~Success~Scenario}]:\\
+% 1. \emph{Creator1} \\
+% 2. \\
+% 3. \\
+% 4. \\
+% 5. \\
+% 6. 
+% 
+% \item [\textbf{Extensions}]:\\
+% 2.a None internal worker can execute the mission\\
+% \hspace*{0.5cm} 2.a.1 \\
+% \hspace*{0.5cm} 2.a.2 \\
+% \hspace*{0.5cm} 2.a.3 \\
+% 
+% }
+% \end{lyxlist}
+% \hrule
+
 
 
 
@@ -83,53 +110,300 @@ different stages of the process while its is performed by the actor(s).
 \section{Multi-procedures}
 
 
-\subsection{MyMultiProcedure1}
-\ldots
+% \subsection{MyMultiProcedure1}
+% \ldots
 
-\subsection{MyMultiProcedure2}
-\ldots
+\subsection{DeployAndRun}
 
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] DeployAndRun
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Administrator Bill
+\item [\textbf{Secondary Actor(s)}:] Creator theCreator,\\
+                  Coordinator Steve,\\
+                  Activator theClock,\\
+                  Communication Company Tango
+\item [\textbf{Goal:}] The goal is to install the \mysystemname system on its
+infrastructure and to exploit its capacities related to the secure
+administration and efficient handling of car crash situations depending on
+alerts received.
+\item [\textbf{Level}:] Summary level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{theCreator} instructs \emph{CMS} to create the system and environment
+indicating that the number of communication company actor instances for
+system's environment is 4 (one of them is identified here by \emph{Tango})\\
+2. \emph{theClock} sets \emph{CMS}'s clock to '2017:11:24 - 03:20:00'\\
+3. \emph{Bill} follows identification procedure to be allowed to add or delete
+the necessary crisis coordinators (one of them is identified here by
+\emph{Steve}) by first providing login 'icrashadmin' and password '7WXC1359'
+to \emph{CMS}\\
+4. \emph{CMS} approves login/password pair provided by \emph{Bill} and asks
+him to provide fingerprint scan of his finger using special mobile app in the
+following 60 seconds\\
+5. \emph{Bill} opens special mobile app, scans his finger with the special
+finger scanning device and app sends data about \emph{Bill}'s fingerprint to
+the \emph{CMS}\\
+6. \emph{CMS} approves obtained fingerprint scan and shows message ``You are
+logged! Welcome \ldots'' to \emph{Bill}\\
+7. \emph{Bill} instructs \emph{CMS} to add coordinator with id ``1'',
+login ``steve'' and password ``pwdMessirExcalibur2017''\\
+8. If \emph{Steve} has not provided his fingerprint scan yet to the \emph{CMS},
+\emph{Bill} asks \emph{Steve} to provide his fingerprint scan information to
+save it in \emph{CMS} for future authorization\\
+9. \emph{CMS} shows authorization window for coordinator \emph{Steve}\\
+10. \emph{Bill} informs \emph{CMS} that he wants to logout\\
+11. \emph{CMS} informs \emph{Bill} that he has logouted by showing message ``You
+are logged out! Good Bye!'' to him\\
+12. \emph{theClock} sets \emph{CMS}'s clock to `2017:11:26 - 10:15:00`\\
+13. \emph{Tango} informs \emph{CMS} about alert with human kind ``witness'',
+date ``2017:11:26'', time ``10:10:16'', phone number ``+3524666445252'', latitude
+``49.627675'', longtitude ``6.159590'' and comment ``3 cars involved in an
+accident''\\
+14. \emph{CMS} saves obtained alert with ID 1 and sends SMS message
+``+3524666445252, Your alert has been registered. We will handle it and keep
+you informed'' to \emph{Tango}, which dispatches it to it's customer with
+corresponding phone number\\
+15. \emph{theClock} sets \emph{CMS}'s clock to `2017:11:26 - 10:30:00`\\
+16. \emph{theClock} instructs \emph{CMS} to sollicitate crisis handling\\
+17. \emph{CMS} notifies \emph{Bill} about pending alert by showing message
+``There are alerts pending since more than defined delay. Please REACT!'' to
+him\\
+18. \emph{CMS} notifies \emph{Steve} about pending alert by showing message
+``There are alerts pending since more than defined delay. Please REACT!'' to
+him\\
+19. \emph{Steve} follows identification procedure by first providing login
+``steve'' and password ``pwdMessirExcalibur2017'' to \emph{CMS}\\
+20. \emph{CMS} approves obtained login/password pair and asks
+\emph{Steve} to provide fingerprint scan of his finger using special mobile app
+in the following 60 seconds\\
+21. \emph{Steve} opens special mobile app, scans his finger with the special
+finger scanning device and app sends data about \emph{Steve}'s fingerprint to
+the \emph{CMS}\\
+22. \emph{CMS} approves obtained fingerprint scan and shows message ``You are
+logged! Welcome \ldots'' to \emph{Steve}\\
+23. \emph{Steve} asks \emph{CMS} to list for him crises this status
+``pending''\\
+24. \emph{CMS} sends a crisis with ID 1 details to \emph{Steve}\\
+25. \emph{Steve} instructs \emph{CMS} to declare himself as the handler of a
+crisis having ID 1\\
+26. \emph{CMS} sends SMS message
+``+3524666445252, The handling of your alert by our services is in progress'' to
+\emph{Tango}, which dispatches it to it's customer with corresponding phone
+number\\
+27. \emph{CMS} shows message ``You are now considered as handling the crisis!''
+to \emph{Steve}\\
+28. \emph{theClock} sets \emph{CMS}'s clock to ``2017:11:26 - 10:45:00''\\
+29. \emph{Steve} instructs \emph{CMS} to set status of alert with ID 1 as a
+``valid"\\
+30. \emph{CMS} sets status of alert with ID 1 to ``valid'' and shows message
+``The Alert is now declared as valid!'' to \emph{Steve}\\
+31. \emph{Tango} informs \emph{CMS} about alert with human kind ``witness'',
+date ``2017:11:26'', time ``10:20:00'', phone number ``+3524666445000'',
+latitude ``49.627095'', longtitude ``6.160251'' and comment ``A car crash
+just happened.''\\
+32. \emph{CMS} sends SMS message
+``+3524666445000, Your alert has been registered. We will handle it and keep
+you informed'' to \emph{Tango}, which dispatches it to it's customer with
+corresponding phone number\\
+33. \emph{theClock} sets \emph{CMS}'s clock to ``2017:11:26 - 12:45:00''\\
+34. \emph{Steve} instructs \emph{CMS} to set status of crisis with ID 1 to
+``solved''\\
+35. \emph{CMS} changes status of crisis with ID 1 and shows message ``The
+crisis status has been updated!'' to \emph{Steve}\\
+36. \emph{Steve} instructs \emph{CMS} to update textual information (comment)
+available to crisis with ID 1 to ``3 victims sent to hospital, 2 cars
+evacuated and 4 rescure unit mobilized"\\
+37. \emph{CMS} updates comment on crisis with ID 1 and shows message ``The
+crisis comment has been updated!'' to \emph{Steve}\\
+38. \emph{Steve} instructs \emph{CMS} to close (change status to ``closed'')
+crisis with ID 1\\
+39. \emph{CMS} closes crisis with ID 1 and shows message ``The crisis is now
+closed!'' to \emph{Steve}\\
+40. \emph{CMS} opens QA survey for crisis with ID 1 for 5 hours by sending SMS
+message ``+3524666445252, your alert has been processed. To let us know about
+your satisfaction about handling your alert, please answer the two following
+questions: 1) How quick your alert was handled? 2) Did actions performed by our
+coordinator help in resolving the situation? We expect you to answer these
+questions in 5 hours by sending us mark answers (numbers from 0 to 5 each) to
+each question, separated by spaces (e.g. '4 5').'' to \emph{Tango} which
+dispatches it to customer with corresponding number.\\
+41. \emph{Tango} informs \emph{CMS} about answer to QA survey with sender phone
+number ``+3524666445252'', reply ``5 4'', date '2017:11:26' and time
+'13:00:00'\\
+42. \emph{CMS} saves information of obtained reply to QA survey from person
+with phone number ``+3524666445252''
 
-\subsection{MyMultiProcedure3}
-\ldots
+% \item [\textbf{Extensions}]:\\
+% 4.a None internal worker can execute the mission\\
+% \hspace*{0.5cm} 2.a.1 \\
+% \hspace*{0.5cm} 2.a.2 \\
+% \hspace*{0.5cm} 2.a.3 \\
 
+}
 
-
-
-
+\end{lyxlist}
+\hrule
 
 
 \section{Mono-procedures}
 Mono-procedures must be grouped by actors.
 
+\subsection{Coordinator}
 
-\subsection{MyActor1}
+\subsubsection{GlobalCrisisHandling}
 
-\subsubsection{MyProcedure1MyActor1}
-\ldots
-
-\subsubsection{MyProcedure2MyActor1}
-\ldots
-
-
-\subsection{My-Actor2}
-
-\subsubsection{MyProcedure1MyActor2}
-\ldots
-
-\subsubsection{MyProcedure2MyActor2}
-\ldots
-
-
-
-
-
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] GlobalCrisisHandling 
+\item [\textbf{Scope:}] system
+\item [\textbf{Primary Actor}:] Coordinator Coord1
+\item [\textbf{Goal:}] Coord1’s goal is to monitor the alerts
+received and the corresponding crisis in order to act as necessary to handle the crisis.
+\item [\textbf{Level}:] Summary level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Creator1} \\
+2. \\
+3. \\
+4. \\
+5. \\
+6. 
 
 
+\item [\textbf{Extensions}]:\\
+2.a None internal worker can execute the mission\\
+\hspace*{0.5cm} 2.a.1 \\
+\hspace*{0.5cm} 2.a.2 \\
+\hspace*{0.5cm} 2.a.3 \\
+
+}
+
+\end{lyxlist}
+\hrule
+
+\subsubsection{ManageCrisis}
+
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] ManageCrisis
+\item [\textbf{Scope:}] system
+\item [\textbf{Primary Actor}:] Coordinator Coord1
+\item [\textbf{Goal:}] The goal is to do an action that makes the handling of a
+crisis or an alert progress.
+\item [\textbf{Level}:] User-goal level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Creator1} \\
+2. \\
+3. \\
+4. \\
+5. \\
+6.
 
 
+\item [\textbf{Extensions}]:\\
+2.a None internal worker can execute the mission\\
+\hspace*{0.5cm} 2.a.1 \\
+\hspace*{0.5cm} 2.a.2 \\
+\hspace*{0.5cm} 2.a.3 \\
+
+}
+
+\end{lyxlist}
+\hrule
+
+\subsubsection{Monitor}
+
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] Monitor
+\item [\textbf{Scope:}] system
+\item [\textbf{Primary Actor}:] Coordinator Coord1
+\item [\textbf{Goal:}] Coord1’s goal is to get the detailed list of
+existing crisis or alerts to decide on next actions to undertake.
+\item [\textbf{Level}:] User-goal level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Creator1} \\
+2. \\
+3. \\
+4. \\
+5. \\
+6.
 
 
+\item [\textbf{Extensions}]:\\
+2.a None internal worker can execute the mission\\
+\hspace*{0.5cm} 2.a.1 \\
+\hspace*{0.5cm} 2.a.2 \\
+\hspace*{0.5cm} 2.a.3 \\
+
+}
+
+\end{lyxlist}
+\hrule
+
+\subsection{Administrator}
+
+\subsubsection{AdministrateTheSystem}
+
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] AdministrateTheSystem
+\item [\textbf{Scope:}] system
+\item [\textbf{Primary Actor}:] Administrator Admin1
+\item [\textbf{Goal:}] Admin1’s goal is to follow an
+identification procedure to be allowed to add or delete the necessary crisis
+coordinators that will be granted the responsibility to handle alerts and crisis.
+\item [\textbf{Level}:] User-goal level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Creator1} \\
+2. \\
+3. \\
+4. \\
+5. \\
+6.
 
 
+\item [\textbf{Extensions}]:\\
+2.a None internal worker can execute the mission\\
+\hspace*{0.5cm} 2.a.1 \\
+\hspace*{0.5cm} 2.a.2 \\
+\hspace*{0.5cm} 2.a.3 \\
+
+}
+
+\end{lyxlist}
+\hrule
+
+\subsubsection{SecurelyUseSystem}
+
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] SecurelyUseSystem
+\item [\textbf{Scope:}] system
+\item [\textbf{Primary Actor}:] Administrator Admin1
+\item [\textbf{Goal:}] Admin1’s goal is to follow an
+identification procedure to be allowed to add or delete the necessary crisis
+coordinators that will be granted the responsibility to handle alerts and crisis.
+\item [\textbf{Level}:] User-goal level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Creator1} \\
+2. 
+
+
+\item [\textbf{Extensions}]:\\
+2.a None internal worker can execute the mission\\
+\hspace*{0.5cm} 2.a.1 \\
+\hspace*{0.5cm} 2.a.2 \\
+\hspace*{0.5cm} 2.a.3 \\
+
+}
+
+\end{lyxlist}
+\hrule
 
