@@ -252,31 +252,24 @@ Mono-procedures must be grouped by actors.
 
 \subsection{Coordinator}
 
-\subsubsection{GlobalCrisisHandling}
+\subsubsection{Monitor}
 
 \hrule
 \begin{lyxlist}{PC1}
 \small{
-\item [\textbf{Procedure:}] GlobalCrisisHandling 
-\item [\textbf{Scope:}] system
-\item [\textbf{Primary Actor}:] Coordinator Coord1
-\item [\textbf{Goal:}] Coord1’s goal is to monitor the alerts
-received and the corresponding crisis in order to act as necessary to handle the crisis.
-\item [\textbf{Level}:] Summary level
+\item [\textbf{Procedure:}] Monitor
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Coordinator Steve
+\item [\textbf{Goal:}] Steve’s goal is to get the detailed list of
+pending alerts and crises to decide on next actions to undertake.
+\item [\textbf{Level}:] User-goal level
 \item [\textbf{Main~Success~Scenario}]:\\
-1. \emph{Creator1} \\
-2. \\
-3. \\
-4. \\
-5. \\
-6. 
-
-
-\item [\textbf{Extensions}]:\\
-2.a None internal worker can execute the mission\\
-\hspace*{0.5cm} 2.a.1 \\
-\hspace*{0.5cm} 2.a.2 \\
-\hspace*{0.5cm} 2.a.3 \\
+1. \emph{Steve} instructs the \emph{CMS} to give him detailed list of pending
+alerts\\
+2. \emph{CMS} sends \emph{Steve} alerts with status 'pending'\\
+3. \emph{Steve} instructs the \emph{CMS} to give him detailed list of pending
+crises\\
+4. \emph{CMS} sends \emph{Steve} crises with status 'pending'
 
 }
 
@@ -289,95 +282,102 @@ received and the corresponding crisis in order to act as necessary to handle the
 \begin{lyxlist}{PC1}
 \small{
 \item [\textbf{Procedure:}] ManageCrisis
-\item [\textbf{Scope:}] system
-\item [\textbf{Primary Actor}:] Coordinator Coord1
-\item [\textbf{Goal:}] The goal is to do an action that makes the handling of a
-crisis or an alert progress.
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Coordinator Steve
+\item [\textbf{Goal:}] The goal is to do an action that makes the handling of
+alert with ID 1 and crisis with ID 1 progress, and mark alert with ID 2 as
+invalid.
 \item [\textbf{Level}:] User-goal level
 \item [\textbf{Main~Success~Scenario}]:\\
-1. \emph{Creator1} \\
-2. \\
-3. \\
-4. \\
-5. \\
-6.
-
-
-\item [\textbf{Extensions}]:\\
-2.a None internal worker can execute the mission\\
-\hspace*{0.5cm} 2.a.1 \\
-\hspace*{0.5cm} 2.a.2 \\
-\hspace*{0.5cm} 2.a.3 \\
-
+1. \emph{Steve} instructs the \emph{CMS} to mark alert with ID 1 as 'valid'\\
+2. \emph{CMS} informs \emph{Steve} that it has marked alert with ID 1 as
+'valid' by showing message ``The alert is now declared as valid" to him\\
+3. \emph{Steve} instructs \emph{CMS} to declare himself as the handler of a
+crisis having ID 1\\
+4. \emph{CMS} shows message ``You are now considered as handling the crisis!''
+to \emph{Steve}\\
+5. to deal with the crisis, \emph{Steve} calls ambulance, tow truck and rescue
+units to crisis' location (these actions performed outside the \emph{CMS})\\
+6. \emph{Steve} instructs the \emph{CMS} to mark
+crisis with ID 1 as 'solved'\\
+7. \emph{CMS} updates status of crisis with ID 1 and notifies \emph{Steve}
+about it by showing message ``The crisis status has been updated!" to him\\
+8. \emph{Steve} instructs \emph{CMS} to update textual information (comment)
+available to crisis with ID 1 to ``3 victims sent to hospital, 2 cars
+evacuated and 4 rescue unit mobilized"\\
+9. \emph{CMS} updates comment on crisis with ID 1 and shows message ``The
+crisis comment has been updated!'' to \emph{Steve}\\
+10. \emph{Steve} instructs \emph{CMS} to close (change status to ``closed'')
+crisis with ID 1\\
+11. \emph{CMS} closes crisis with ID 1 and shows message ``The crisis is now
+closed!'' to \emph{Steve}\\
+12. \emph{Steve} instructs the \emph{CMS} to mark alert with ID 2 as 'invalid'\\
+13. \emph{CMS} informs \emph{Steve} that it has set status of alert with ID 2 to
+'invalid' by showing message ``The alert is now declared as invalid!" to him\\
 }
 
 \end{lyxlist}
 \hrule
 
-\subsubsection{Monitor}
+\subsubsection{GlobalCrisisHandling}
 
 \hrule
 \begin{lyxlist}{PC1}
 \small{
-\item [\textbf{Procedure:}] Monitor
-\item [\textbf{Scope:}] system
-\item [\textbf{Primary Actor}:] Coordinator Coord1
-\item [\textbf{Goal:}] Coord1’s goal is to get the detailed list of
-existing crisis or alerts to decide on next actions to undertake.
-\item [\textbf{Level}:] User-goal level
+\item [\textbf{Procedure:}] GlobalCrisisHandling 
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Coordinator Steve
+\item [\textbf{Goal:}] Steve’s goal is to authenticate in system and monitor
+the alerts received and the corresponding crisis in order to act as necessary
+to handle the crisis.
+\item [\textbf{Level}:] Summary level
 \item [\textbf{Main~Success~Scenario}]:\\
-1. \emph{Creator1} \\
-2. \\
-3. \\
-4. \\
-5. \\
-6.
-
-
-\item [\textbf{Extensions}]:\\
-2.a None internal worker can execute the mission\\
-\hspace*{0.5cm} 2.a.1 \\
-\hspace*{0.5cm} 2.a.2 \\
-\hspace*{0.5cm} 2.a.3 \\
+1. \emph{Steve} follows identification procedure by first providing login
+``steve'' and password ``pwdMessirExcalibur2017'' to \emph{CMS}\\
+2. \emph{CMS} approves obtained login/password pair and asks
+\emph{Steve} to provide fingerprint scan of his finger using special mobile app
+in the following 60 seconds\\
+3. \emph{Steve} opens special mobile app, scans his finger with the special
+finger scanning device and app sends data about \emph{Steve}'s fingerprint to
+the \emph{CMS}\\
+4. \emph{CMS} approves obtained fingerprint scan and shows message ``You are
+logged! Welcome \ldots'' to \emph{Steve}\\
+5. \emph{Steve} instructs the \emph{CMS} to give him detailed list of pending
+alerts\\
+6. \emph{CMS} sends \emph{Steve} alerts with status 'pending'\\
+7. \emph{Steve} instructs the \emph{CMS} to give him detailed list of pending
+crises\\
+8. \emph{CMS} sends \emph{Steve} crises with status 'pending'\\
+9. \emph{Steve} instructs the \emph{CMS} to mark alert with ID 1 as 'valid'\\
+10. \emph{CMS} informs \emph{Steve} that it has marked alert with ID 1 as
+'valid' by showing message ``The alert is now declared as valid" to him\\
+11. \emph{Steve} instructs \emph{CMS} to declare himself as the handler of a
+crisis having ID 1\\
+12. \emph{CMS} shows message ``You are now considered as handling the crisis!''
+to \emph{Steve}\\
+13. to deal with the crisis, \emph{Steve} calls ambulance, tow truck and rescue
+units to crisis' location (these actions performed outside the \emph{CMS})\\
+14. \emph{Steve} instructs the \emph{CMS} to mark crisis with ID 1 as 'solved'\\
+15. \emph{CMS} updates status of crisis with ID 1 and notifies \emph{Steve}
+about it by showing message ``The crisis status has been updated!" to him\\
+16. \emph{Steve} instructs \emph{CMS} to update textual information (comment)
+available to crisis with ID 1 to ``3 victims sent to hospital, 2 cars
+evacuated and 4 rescure unit mobilized"\\
+17. \emph{CMS} updates comment on crisis with ID 1 and shows message ``The
+crisis comment has been updated!'' to \emph{Steve}\\
+18. \emph{Steve} instructs \emph{CMS} to close (change status to ``closed'')
+crisis with ID 1\\
+19. \emph{CMS} closes crisis with ID 1 and shows message ``The crisis is now
+closed!'' to \emph{Steve}\\
+20. \emph{Steve} informs the \emph{CMS} that he wants to logout\\
+21. \emph{CMS} informs \emph{Steve} that he has logouted by showing message
+``You are logged out! Good Bye!'' to him
 
 }
-
 \end{lyxlist}
 \hrule
 
 \subsection{Administrator}
-
-\subsubsection{AdministrateTheSystem}
-
-\hrule
-\begin{lyxlist}{PC1}
-\small{
-\item [\textbf{Procedure:}] AdministrateTheSystem
-\item [\textbf{Scope:}] system
-\item [\textbf{Primary Actor}:] Administrator Admin1
-\item [\textbf{Goal:}] Admin1’s goal is to follow an
-identification procedure to be allowed to add or delete the necessary crisis
-coordinators that will be granted the responsibility to handle alerts and crisis.
-\item [\textbf{Level}:] User-goal level
-\item [\textbf{Main~Success~Scenario}]:\\
-1. \emph{Creator1} \\
-2. \\
-3. \\
-4. \\
-5. \\
-6.
-
-
-\item [\textbf{Extensions}]:\\
-2.a None internal worker can execute the mission\\
-\hspace*{0.5cm} 2.a.1 \\
-\hspace*{0.5cm} 2.a.2 \\
-\hspace*{0.5cm} 2.a.3 \\
-
-}
-
-\end{lyxlist}
-\hrule
 
 \subsubsection{SecurelyUseSystem}
 
@@ -385,25 +385,88 @@ coordinators that will be granted the responsibility to handle alerts and crisis
 \begin{lyxlist}{PC1}
 \small{
 \item [\textbf{Procedure:}] SecurelyUseSystem
-\item [\textbf{Scope:}] system
-\item [\textbf{Primary Actor}:] Administrator Admin1
-\item [\textbf{Goal:}] Admin1’s goal is to follow an
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Administrator Bill
+\item [\textbf{Goal:}] Bill’s goal is to follow an
 identification procedure to be allowed to add or delete the necessary crisis
 coordinators that will be granted the responsibility to handle alerts and crisis.
 \item [\textbf{Level}:] User-goal level
 \item [\textbf{Main~Success~Scenario}]:\\
-1. \emph{Creator1} \\
-2. 
-
-
-\item [\textbf{Extensions}]:\\
-2.a None internal worker can execute the mission\\
-\hspace*{0.5cm} 2.a.1 \\
-\hspace*{0.5cm} 2.a.2 \\
-\hspace*{0.5cm} 2.a.3 \\
-
+1. \emph{Bill} informs \emph{CMS} that he wants to authenticate using login
+'icrashadmin' and password '7WXC1359'\\
+2. \emph{CMS} approves login/password pair provided by \emph{Bill} and asks
+him to provide fingerprint scan of his finger using special mobile app in the
+following 60 seconds\\
+3. \emph{Bill} opens special mobile app, scans his finger with the special
+finger scanning device and app sends data about \emph{Bill}'s fingerprint to
+the \emph{CMS}\\
+4. \emph{CMS} approves obtained fingerprint scan and shows message ``You are
+logged! Welcome \ldots'' to \emph{Bill}\\
+5. \emph{Bill} informs the \emph{CMS} that he wants to logout\\
+6. \emph{CMS} informs \emph{Bill} that he has logouted by showing message ``You
+are logged out! Good Bye!'' to him
 }
-
 \end{lyxlist}
 \hrule
 
+\subsubsection{AdministrateTheSystem}
+
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] AdministrateTheSystem
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Administrator Bill
+\item [\textbf{Goal:}] Bill’s goal is to follow an
+identification procedure to be allowed to add or delete the necessary crisis
+coordinators that will be granted the responsibility to handle alerts and crisis.
+\item [\textbf{Level}:] User-goal level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Bill} follows identification procedure to be allowed to add or delete
+the necessary crisis coordinators (one of them is identified here by
+\emph{Steve}) by first providing login 'icrashadmin' and password '7WXC1359'
+to \emph{CMS}\\
+2. \emph{CMS} approves login/password pair provided by \emph{Bill} and asks
+him to provide fingerprint scan of his finger using special mobile app in the
+following 60 seconds\\
+3. \emph{Bill} opens special mobile app, scans his finger with the special
+finger scanning device and app sends data about \emph{Bill}'s fingerprint to
+the \emph{CMS}\\
+4. \emph{CMS} approves obtained fingerprint scan and shows message ``You are
+logged! Welcome \ldots'' to \emph{Bill}\\
+5. \emph{Bill} instructs \emph{CMS} to add coordinator with id ``1'',
+login ``steve'' and password ``pwdMessirExcalibur2017''\\
+6. \emph{CMS} creates new coordinator with id ``1'', login ``steve'' and
+password ``pwdMessirExcalibur2017''\\
+7. \emph{Bill} instructs \emph{CMS} to delete coordinator with id ``1''\\
+8. \emph{CMS} deletes coordinator with id ``1''
+}
+\end{lyxlist}
+\hrule
+
+\subsubsection{MonitorQualityInsurance}
+
+\hrule
+\begin{lyxlist}{PC1}
+\small{
+\item [\textbf{Procedure:}] MonitorQualityAssurance
+\item [\textbf{Scope:}] Crisis Management System (\emph{CMS})
+\item [\textbf{Primary Actor}:] Administrator Bill
+\item [\textbf{Goal:}] The intention of Administrator Bill is to observe
+relative amounts of each type of mark-answer (number from 0 to 5) for QA survey
+question ``How quick your alert was handled?'' in context of all crises and in
+context of crisis with ID 1
+\item [\textbf{Level}:] User-goal level
+\item [\textbf{Main~Success~Scenario}]:\\
+1. \emph{Bill} instructs the \emph{CMS} to show satisfaction diagram for
+question ``How quick your alert was handled?" without providing ID of specific
+crisis\\
+2. \emph{CMS} shows eye chart diagram showing relative amounts of each type of
+mark for given question regarding all crises to \emph{Bill}\\
+3. \emph{Bill} instructs the \emph{CMS} to show satisfaction diagram for
+question ``How quick your alert was handled?" and crisis with ID 1\\
+4. \emph{CMS} shows eye chart diagram showing relative amounts of each type of
+mark for given question regarding crisis with ID 1 to \emph{Bill}
+}
+\end{lyxlist}
+\hrule
