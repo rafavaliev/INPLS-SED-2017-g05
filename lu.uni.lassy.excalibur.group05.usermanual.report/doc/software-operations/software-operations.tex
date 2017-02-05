@@ -33,6 +33,22 @@ automatically once the crisis has been created.
  
 \end{description}
 
+% \begin{description}
+% 
+% \item \textbf{Parameters:} 
+% \item \textbf{Precondition:} 
+% \item \textbf{Post-condition:} 
+% \item \textbf{Output messages:} 
+% 
+% \item \textbf{Triggering:}
+% \begin{enumerate}
+% \item 
+% \item 
+% \item 
+% \end{enumerate}
+% 
+% \end{description}
+
  
 \subsection{MyExample1}
 Examples should illustrate the use of \textbf{complex operations}.
@@ -42,5 +58,545 @@ description to achieve (at least one of) its expected outcome.
 
 It might be required to include GUI screenshots to illustrate the example.
 
+\section{Activator}
 
+\subsection{SollicitateCrisisHandling}
+\label{operation:sollicitatecrisishandling}
 
+Activator informs coordinators about or randomly allocates crises that stood too
+longly in a not handled status.
+
+\begin{description}
+
+\item \textbf{Parameters:} none
+\item \textbf{Precondition:} The system is started and there exist some
+logged coordinators.
+\item \textbf{Post-condition:} If there exist crises who
+stood in a not handled status more than the maximum allowed time then those
+crises are randomly allocated to the existing coordinators. For all other crisis
+who stood too longly in a not handled status but not more than the maximum
+delay allowed then a reminder message is sent to the administrator and all
+coordinator actors of the environment to sollicitate handling of those crisis.
+\item \textbf{Output messages:} reminder message is sent to the administrator
+and all coordinator actors of the environment to sollicitate handling of those
+crisis
+
+\item \textbf{Triggering:}
+\begin{enumerate} 
+	\item there exist some crisis that are in pending status and for which the
+	duration between the current system's state clock information and the last
+	reminder is greater than the crisis reminder period duration.
+\end{enumerate}
+
+\end{description}
+
+\section{Administrator}
+
+\subsection{AddCoordinator}
+\label{operation:addcoordinator}
+
+Administrator adds new coordinator to the system.
+
+\begin{description}
+
+\item \textbf{Parameters:} Coordinator's ID, Coordinator's Login, Coordinator's
+Password, Coordinator's FingerPrint
+\item \textbf{Precondition:} the system is started, administrator logged
+previously and did not log out and new coordinator provided his fingerprint
+information
+\item \textbf{Post-condition:} the environment has a new instance of coordinator
+actor allowing for input/output message communication with the system, new entry
+added to the database, and the administrator is informed about the satisfaction
+of its request.
+\item \textbf{Output messages:} Administrator will be automatically notified
+once new coordinator added
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Admin window press ``Add a coordinator''
+button
+\item Fill out the fields related to new coordinator's id, username, password
+and fingerprint information file
+\item Click on the ``Create'' button
+\end{enumerate}
+
+\end{description}
+
+\subsection{DeleteCoordinator}
+\label{operation:deletecoordinator}
+
+Administrator deletes existing coordinator from the system.
+
+\begin{description}
+
+\item \textbf{Parameters:} Coordinator's ID
+\item \textbf{Precondition:} the system is started, administrator logged
+previously and did not log out, there exists one coordinator with the same Id
+as one provided by administrator
+\item \textbf{Post-condition:} the coordinator having the
+required id do not belong anymore to the system and corresponding entry removed
+from the database, the administrator is informed about the satisfaction of his
+request.
+\item \textbf{Output messages:} The Administrator is automatically notified once
+the coordinator has been deleted
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Admin window press ``Delete a
+coordinator'' button
+\item Fill out the field related to ID of coordinator which Administrator wants
+to delete
+\item Click on the ``Delete'' button
+\end{enumerate}
+
+\end{description}
+
+\subsection{MonitorOverallQualityInsurence}
+
+Administrator observes relative amounts of each type of mark-answer
+(number from 0 to 5) to given QA survey question for all crises
+
+% TODO synchronize with mockup representation
+\begin{description}
+
+\item \textbf{Parameters:} 
+\item \textbf{Precondition:}
+\item \textbf{Post-condition:}
+\item \textbf{Output messages:}
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item
+\item
+\item
+\end{enumerate}
+
+\end{description}
+
+\subsection{MonitorQualityInsurenceForCrisis}
+
+Administrator observes relative amounts of each type of mark-answer
+(number from 0 to 5) to given QA survey question for specified crisis
+
+% TODO synchronize with mockup representation
+\begin{description}
+
+\item \textbf{Parameters:} 
+\item \textbf{Precondition:}
+\item \textbf{Post-condition:}
+\item \textbf{Output messages:}
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item
+\item
+\item
+\end{enumerate}
+
+\end{description}
+
+\section{Authenticated}
+
+\subsection{Login}
+
+Actor requests authorization to get access to secured system operations.
+
+\begin{description}
+
+\item \textbf{Parameters:} Actor's Login, Actor's Password
+\item \textbf{Precondition:} The system is started and actor is not already
+logged in
+\item \textbf{Post-condition:} If the authentication information is correct then
+the actor is known to be logged in.
+\item \textbf{Output messages:} If the authentication information is correct,
+the message ``You are logged! Welcome \ldots'' is shown to actor. Otherwise -
+the message ``Wrong identification information! Please try again \ldots'' is
+shown.
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Authentication window (whether Admin or
+Coordinator window) fill out the fields related to actor's login and password
+\item Press ``logon'' button and try to authenticate
+\item If login/password pair is correct, open special mobile app to perform
+fingerprint scanning, scan finger with the special finger scanning device and
+send fingerprint data to the system. If provided fingerprint info is correct,
+get welcome message from the system.
+\item Otherwise be notified that actor gave incorrect data and all
+the administrator actors existing in the environement are notified of an
+intrusion temptative.
+\end{enumerate}
+
+\end{description}
+
+\subsection{Logout}
+Actor logouts to end the secured access to specific system operations.
+
+\begin{description}
+
+\item \textbf{Parameters:} none
+\item \textbf{Precondition:} the system is started and the actor is currently
+logged in.
+\item \textbf{Post-condition:} the actor is known to be logged out
+\item \textbf{Output messages:} a logout confirmation message is sent to the
+actor
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Administrator/Coordinator window press
+``Logoff'' button
+\end{enumerate}
+
+\end{description}
+
+\section{Communication Company}
+
+\subsection{Alert}
+
+Communication Company delcares and sends structured information (alert) about a
+crisis obtained from sms message of some human having a phone able to connect to the
+actor.
+
+\begin{description}
+
+\item \textbf{Parameters:} 
+\begin{itemize}
+  \item the kind of human informing of an lert (either victim, witness or
+  anonym)
+  \item date of alert
+  \item time of alert
+  \item the phone number of the human sending the alert SMS message
+  \item the GPS position of the phone at the date and time the message was sent
+  \item a free text message sent by the human providing information on the alert
+  that he wants to declare
+\end{itemize}
+\item \textbf{Precondition:} the system is supposed to be created and
+initialized; the date and time the alert is declared is supposed to be in the
+past with respect to the current time known by the system.
+\item \textbf{Post-condition:} 
+\begin{itemize}
+	\item new alert with status ``pending'', instant
+information (GPS location and comment) based on date and time provided
+(position and comment) is added to the system 
+	\item If there exist no already registered alert near to the alert currently
+	declared then a new crisis is added to the system and initialized with: type
+	considered as small, its status being pending, its declared time being the
+	same than the alert and a default comment indicating that a report will come
+	later on. Otherwise - the crisis to which the new alert must be related to is
+	the one related to any alert nearby.
+	\item If there is no human instance having same phone number and same kind in
+	the then a new one is added with given phone number and kind and is associated
+	to the communication company actor used to declare the alert.
+	\item Specified human is related to the new alert thus indicating he has
+	signed the alert.
+\end{itemize}
+ 
+\item \textbf{Output messages:} If provided information is valid, the message
+``Your alert has been registered. We will handle it and keep you informed'' is
+shown to the Communication Company once the alert is saved in the system.
+Otherwise - ``Incorrect data'' message is shown.
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Communication Company window fill out
+the required entries related to the information of the alert such type of
+person who sent SMS message with info about crisis, date of alert, time of
+crisis, phone number of this person, latitude and longtitude of person's phone
+location at time the message was sent and comment on alert.
+\item Click on ``Send alert'' button and send alert's information to the system.
+\end{enumerate}
+
+\end{description}
+
+\subsection{QualityAssuranceQuestionAnswer}
+
+Communication Company declares and sends structured information about customer's
+(victim, witness or anonym) answer to QA survey questions sent to him previously
+after some crisis, to which the person was related, closed.
+
+\begin{description}
+
+\item \textbf{Parameters:} Human's phone number, his mark-answer to QA
+questions, date when his sms message with answers arrived, time of this sms
+message
+\item \textbf{Precondition:}
+\begin{itemize}
+  \item the system is supposed to be created and initialized
+  \item there exists human entry in system with given phone number
+  \item the date and time the answer is declared is supposed to be in the past
+  with respect to the current time known by the system
+  \item the difference between the timestamp when QA survey was sent to human  
+  (saved in ``ClosedTimestamp'' field of crisis in the system) and declared
+  time of answer is less or equals to 5 hours (the system waits answers to each
+  QA survey for 5 hours since it is sent)
+\end{itemize}
+\item \textbf{Post-condition:} there exist answers in the system to QA survey
+question associated with crisis to which the human with given phone number was previously
+associated
+\item \textbf{Output messages:} If all field are filled in a valid way, the
+message ``Answer sent!''. Otherwise - ``Incorrect data'' message is shown.
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Communication Company window press
+``Send QA Survey answer'' button  
+\item In pop-up window fill out all fields related to QA survey answers such as
+phone number, answers message, date and time
+\item Press ``Send answer'' button
+\end{enumerate}
+
+\end{description}
+
+\section{Coordinator}
+
+\subsection{GetAlertsSet}
+
+Coordinator requests a detailed list of all the alerts having a specific status.
+
+\begin{description}
+
+\item \textbf{Parameters:} Alert Status (either pending, valid or invalid)
+\item \textbf{Precondition:} The system is started and the coordinator logged
+previously and did not log out.
+\item \textbf{Post-condition:} Information about alerts with specified status
+which exist in the system is sent to coordinator.
+\item \textbf{Output messages:} Coordinator notified about each alert whose
+information he obtained.
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``alerts'' tab
+\item Choose alert's type in top-down list.
+\end{enumerate}
+
+\end{description}
+
+\subsection{GetCrisisSet}
+
+Coordinator requests a detailed list of all the crises having a specific status.
+
+\begin{description}
+
+\item \textbf{Parameters:} Crisis Status (either pending, handled, solved or
+closed)
+\item \textbf{Precondition:} The system is started and the coordinator logged
+previously and did not log out. 
+\item \textbf{Post-condition:} Information about crises with specified status
+which exist in the system is sent to coordinator.
+\item \textbf{Output messages:} Coordinator notified about each crisis whose
+information he obtained.
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``crises'' tab
+\item Choose crisis' type in top-down list.
+\end{enumerate}
+
+\end{description}
+
+\subsection{ValidateAlert}
+
+Coordinator marks specific alert as valid (is not a fake).
+
+\begin{description}
+
+\item \textbf{Parameters:} Alert's ID
+\item \textbf{Precondition:} The system is started, the coordinator logged
+previously and did not log out, and there exists alert with specified ID
+\item \textbf{Post-condition:} alert with specified ID is marked as a valid
+\item \textbf{Output messages:} the coordinator is notified about the
+satisfaction of his request
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``alerts'' tab
+\item Choose alert's type 'pending' in top-down list
+\item Choose alert which coordinator wants to validate
+\item Press ``Validate'' button
+\end{enumerate}
+
+\end{description}
+
+\subsection{InvalidateAlert}
+
+Coordinator marks specific alert as invalid (is a fake).
+
+\begin{description}
+
+\item \textbf{Parameters:} Alert's ID
+\item \textbf{Precondition:} The system is started, the coordinator logged
+previously and did not log out, and there exists alert with specified ID
+\item \textbf{Post-condition:} alert with specified ID is marked as a invalid
+\item \textbf{Output messages:} the coordinator is notified about the
+satisfaction of his request
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``alerts'' tab
+\item Choose alert's type 'pending' in top-down list
+\item Choose alert which coordinator wants to invalidate
+\item Press ``Invalidate'' button
+\end{enumerate}
+
+\end{description}
+
+\subsection{SetCrisisHandler}
+
+Coordinator declares himself as been the a handler of a crisis having the
+specified id.
+
+\begin{description}
+
+\item \textbf{Parameters:} Crisis ID
+\item \textbf{Precondition:} The system is started, the coordinator logged
+previously and did not log out, and there exists crisis with specified ID
+\item \textbf{Post-condition:} 
+\begin{itemize}
+  \item the crisis with specified ID is in 'handled' status and is associated to
+  the Coordinator
+  \item all the alerts related to this crisis are sent to the Coordinator such
+  that he can decide how to handle them
+  \item if the crisis was already handled by other coordianted then the
+  associated actor is notified about the change of handler for one of his crisis
+  (n.b. it might be the same even if not relevant) by message ``One of
+  the crisis you were handling is now handled by one of your colleagues!''
+  \item a message is sent to the communication company for any human related to
+  an alert associated to the crisis. A human will receive as many messages as
+  alerts he sent despite the fact that they might relate to the same crisis
+  (i.e. one alert, one acknoledgement).
+\end{itemize}
+\item \textbf{Output messages:} ``You are now considered as handling the
+crisis!'' message is shown to coordinator, and ``The handling of your alert by
+our services is in progress!'' message is sent to Communication Company for any
+human related to an alert associated to the crisis with specified ID
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``crisis'' tab
+\item Choose crisis's type in top-down list
+\item Choose crisis which coordinator wants to handle
+\item Press ``Handle crisis'' button
+\end{enumerate}
+
+\end{description}
+
+\subsection{ReportOnCrisis}
+
+Coordinator updates the textual information available for a specific crisis.
+
+\begin{description}
+
+\item \textbf{Parameters:} Crisis ID, New Crisis' comment
+\item \textbf{Precondition:} The system is started, the coordinator logged
+previously and did not log out, and there exists crisis with specified ID
+\item \textbf{Post-condition:} the comment attribute of the crisis having the
+given ID is replaced by the given one 
+\item \textbf{Output messages:} the coordinator is automatically notified about
+succesful update
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``crisis'' tab
+\item Choose crisis's type in top-down list
+\item Choose crisis which coordinator wants to report
+\item Press ``Report crisis'' button
+\item In pop-up window fill the text area related to new crisis' comment
+\item Press ``Report'' button to update crisis' comment 
+\end{enumerate}
+
+\end{description}
+
+\subsection{SetCrisisStatus}
+
+Coordinator defines the handling status of a specific crisis.
+
+\begin{description}
+
+\item \textbf{Parameters:} crisis ID, new crisis' status
+\item \textbf{Precondition:} The system is started, the coordinator logged
+previously and did not log out, and there exists crisis with specified ID
+\item \textbf{Post-condition:} the crisis with specified ID is in specified
+status and is associated to the Coordinator
+\item \textbf{Output messages:} ``The crisis status has been updated!'' message
+is shown to the coordinator
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``crisis'' tab
+\item Choose crisis's type in top-down list
+\item Choose crisis which coordinator wants to report
+\item Click ``Change crisis status'' button
+\item In pop-up window change crisis' status to one which coordinator prefer
+using top-down list
+\item Press ``Change status'' button
+\end{enumerate}
+
+\end{description}
+
+\subsection{CloseCrisis}
+
+Coordinator marks specific crisis as closed. 
+
+\begin{description}
+
+\item \textbf{Parameters:} crisis ID
+\item \textbf{Precondition:} The system is started, the coordinator logged
+previously and did not log out, and there exists crisis with specified ID
+\item \textbf{Post-condition:} 
+\begin{itemize}
+  \item the status of crisis with specified ID is ``closed''
+  \item There is no coordinator declared in the system as associated to the
+  crisis
+  \item all the alert instances associated to this crisis do not belong any more
+  to the system
+  \item QA survey opened for 5 hours and QA survey sets of satisfaction single
+  choice text questions are sent to all people associated with this crisis'
+  alerts through corresponding communication company
+\end{itemize}
+\item \textbf{Output messages:} message ``The crisis is now closed!'' is shown
+to the coordinator
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item From within the crisis management Coordinator window choose ``crisis'' tab
+\item Choose crisis's type in top-down list
+\item Choose crisis which coordinator wants to close
+\item Press ``Close crisis'' button
+\end{enumerate}
+
+\end{description}
+
+\section{Creator}
+
+\subsection{CreateSystemAndEnvironment}
+
+Creator initializes the system and the environment actors instances.
+
+\begin{description}
+
+\item \textbf{Parameters:} quantity of communication companies to create in the environment
+\item \textbf{Precondition:} none
+\item \textbf{Post-condition:}
+\begin{itemize}
+  \item system is initialized with the integer 1 for the crisis
+  and alert counters used for their identifications, a value for the clock
+  corresponding to a default inital time (i.e. January 1st, 1970), the crisis
+  reminder period is set to 300 seconds, the maximum crisis reminder period is
+  fixed to 1200 seconds (i.e. 20 minutes), an initial value for the automatic
+  reminder period equal to the current date and time and the system is
+  considered in a started state
+  \item the environment for communication company actors, is
+  made of instances allowing for receiving and sending messages to humans
+  \item the environment for administrator actors is made of one instance
+  \item the environment for activator actors is made of one instance allowing
+  for automatic message sending based on current system’s and environment's
+  state
+\end{itemize}
+\item \textbf{Output messages:} none
+
+\item \textbf{Triggering:}
+\begin{enumerate}
+\item Creator runs system's server and desktop client
+\end{enumerate}
+
+\end{description}
