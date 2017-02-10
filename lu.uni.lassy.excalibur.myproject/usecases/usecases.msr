@@ -1,19 +1,42 @@
+
 /*
 * @author timur
 * @date Fri Feb 10 20:42:17 MSK 2017
 */
-
 package lu.uni.lassy.excalibur.myproject.usecases {
-
-import lu.uni.lassy.messir.libraries.calendar
-import lu.uni.lassy.messir.libraries.math
-import lu.uni.lassy.messir.libraries.primitives
-import lu.uni.lassy.messir.libraries.string
-
-
+	import lu.uni.lassy.messir.libraries.calendar
+	import lu.uni.lassy.messir.libraries.math
+	import lu.uni.lassy.messir.libraries.primitives
+	import lu.uni.lassy.messir.libraries.string
+	
+	import lu.uni.lassy.excalibur.myproject.environment
 
 	Use Case Model {
 		
-	}
+		use case system subfunction sfAuthenticate() {
+			actor actUser[primary,active]
+			actor actBank[secondary]
+		}
+		
+		use case system subfunction sfChooseCurrency() {
+			actor actUser[primary,active]
+		}
+		
+		use case system subfunction sfDisplayBalanceInChosenCurrency() {
+			actor actBank[primary,active]
+		}
 
+		use case system usergoal ugViewBalance() {
+			actor actUser[primary,active]
+			reuse sfAuthenticate[1..3]
+			reuse sfChooseCurrency[1..1]
+			reuse sfDisplayBalanceInChosenCurrency[1..1]
+			
+			step a: actUser executes sfAuthenticate()
+			
+			step b: actUser executes sfChooseCurrency()
+			
+			step c: actBank executes sfDisplayBalanceInChosenCurrency()
+		}
+	}
 }
