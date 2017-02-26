@@ -2,21 +2,55 @@
 \label{chap:techFrm}
 
 
-Provide a description of the technological frameworks used during the
-development phase of your product. Such technological frameworks
-should be properly introduced and described from the point of view of their
-use during the development of your product.
+% Provide a description of the technological frameworks used during the
+% development phase of your product. Such technological frameworks
+% should be properly introduced and described from the point of view of their
+% use during the development of your product.
+% 
+% \section{Tool 1}
+% \label{sec:Tool1}
+% It was required to \ldots
+
+\section{Java}
+\label{sec:java}
+Due to the need for developing software system some programming language should
+be selected. Java has been chosen.
 
 
+\section{Eclipse}
+\label{sec:eclipse}
+It was required to develop the system inside environment which supports
+Java programmers in most part of their implementation issues (highlighting syntax
+errors, project build, etc.). This environment should also be provided a on free
+basis. Thus, the open-source Integrated Development Environment (IDE) for Java
+programmers called Eclipse was chosen.
 
-\section{Tool 1}
-\label{sec:Tool1}
-It was required to \ldots
+\section{MySQL}
+\label{sec:mysql}
+It was required to persistently store system's actors' information (information
+about alerts, crises, etc.). Thus, some database engine should be chosen. MySQL
+has been selected.
 
+\section{MySQL Workbench}
+\label{sec:mysqlworkbench}
+It was required to find some database toolkit to conveniently and effectively
+manage MySQL database engine. Thus, MySQL Workbench was selected.
 
-\section{Tool 2}
-\label{sec:GUIDev}
-It was required to \ldots
+\section{JavaFX}
+\label{sec:javafx}
+It was required to choose technological framework for GUI development. JavaFX
+was chosen due to good separation of GUI and logic, and rich opportunities for
+creating GUI.
 
+\section{Scene Builder}
+\label{sec:scenebuilder} 
+It was required to find some tool to quickly define GUI layout with JavaFX.
+Scene Builder was chosen.
 
-
+\section{Remote Method Invocation (RMI)}
+\label{sec:rmi}
+It was required to determine protocol to be used for interaction between GUI
+client and server. Remote Method Invocation (RMI) protocol was chosen, because
+it is created exclusively for Java, provides good abstraction level (no
+technological aspects of network communication such as in sockets, http) and has
+well documented by Oracle company.
