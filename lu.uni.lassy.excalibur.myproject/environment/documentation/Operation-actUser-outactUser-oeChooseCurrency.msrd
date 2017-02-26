@@ -1,0 +1,34 @@
+/*
+@author timur
+@date Sun Feb 26 13:35:54 MSK 2017
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.myproject.environment.actUser.outactUser.oeChooseCurrency
+//parameters
+@parameter
+lu.uni.lassy.excalibur.myproject.environment.actUser.outactUser.oeChooseCurrency.currency
+""
+@endParameters
+
+@description "
+ "
+//preProtocol descriptions
+@preP
+" "
+@endPreP
+//preFunctional descriptions
+@preF
+" "
+@endPreF
+//postFunctional descriptions
+@postF 
+" "
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "
