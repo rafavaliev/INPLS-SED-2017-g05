@@ -3,56 +3,69 @@
 
 
 \section{Overview}
-This software system is aimed at \ldots
-
+The \mysystemname software system is intended to be used for secure crisis
+handling and reporting.
+The \mysystemname software system belongs to the Crisis Managment Systems
+Domain. It is intended to be used for secure and convenient crisis reporting by
+victim and witnesses (with a possibility to do so anonymously) and handling by
+coordinators.
 
 
 
 \section{Purpose and recipients of the document}
-This document is a design document. The aim of this document is to provide an
-example of how the design of a particular software system should be documented. 
+This document is a software design document, which is intended to describe and
+summarize main decisions made about architecture and system design of
+\mysystemname software system.
 
-The recipient of this document is the development company (ADC) in charge
-of delivering the software system. The company's developers are
-expected to use this document as the basis for carrying out the actual
-development and deployment of the product (i.e. implementation, testing
-and maintenance).
-
-
-
-
+The audience of this document are employees of the development company (ADC),
+who are responsible for \mysystemname software system production and
+delivering. Document should be consulted during actual system implementation
+and deployment and delivered software should meet all the decisions described in
+the document.
 
 \section{Definitions, acronyms and abbreviations}
-UI Processing View - describe the messages exchanged among objects that allow a
-system operation to be launched.
+All the terms required for proper document understanding: \\
 
-\gls{MVC}
+\gls{MVC} a common design pattern followed to design the Graphical User
+Interfaces in a consistent way.
 
-\gls{myTerm}
+\gls{Actor} An actor is a person, organization, or external system, which
+interacts with a system.
+
+\gls{system operation} system functionality, which could be inviked by an actor
+passing a message.
+
+\gls{Deployment View} describes components topology on a physical layer.
+
+\gls{Implementation View} describes software system components layer.
+
+\gls{UI Processing View} describes the interaction to a system, which allows
+invocation of system operations.
+
+\gls{abstract actor} an actor which could not have an inctance.
 
   
 \section{Document structure} 
-This document is organised as follows: Section \ref{chap:AM} provides a general
-overview of the main concepts gathered during the analysis phase, in particular those concerning the software system abstract
-types, as well as the actors that interact with the
-software system through their interfaces. 
+This document contains several chapters (sections), each of those describes
+a \mysystemname design decisions from different points of view.
 
-The technologies used not only during the design and development phase, but 
-also those required to make the software system runnable are presented in
-Section~\ref{chap:techFrm}.
+Chapter \ref{chap:introduction} contains document overview, description of the
+document purpose and recipients and definitions, acronyms and abbreviations  used in a document.
 
-The architecture of the software system to be implemented and deployed is
-described in Section \ref{chap:arch}. This section presents the components of
-the software system architecture along with their interactions, both from the static and dynamic viewpoints.
+Chapter \ref{chap:AM} provides decription of decision made during analysis
+phase, in particular, software system types and system actors.
 
-The detailed design of each \gls{system operation} is given in Section
-\ref{chap:detDesign}, whereas Section \ref{chap:know_limitations} enumerates the
-current limitations of the software system at the writing time of this document.
+Chapter \ref{chap:techFrm} describes in detail technological frameworks used
+ for \mysystemname production.
 
-Next, Section \ref{chap:testing} presents the different test cases used to
-verify the correct behaviour of the software system's functional and not functional requirements.
+Chapter \ref{chap:arch} describes both hardware, required for \mysystemname
+deployment and running, as well as behaviour of the software during the
+ runtime.
 
-Finally, Section \ref{chap:final_conclusion} draws the
-conclusion achieved during the design and implementation of the software system.
- 
- 
+Chapter \ref{chap:detDesign} in detail describes all system operations.
+
+Chapter \ref{chap:know_limitations} lists all known problems of \mysystemname
+and describes them in detail.
+
+Chapter \ref{chap:final_conclusion} summarizes all the information retrieved
+during design and implementation phase.
