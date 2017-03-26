@@ -1,0 +1,13 @@
+/*
+@author morse
+@date Mon Mar 06 13:58:20 MSK 2017
+*/
+
+
+@@view asdwd
+@model Concept 
+@level Local
+@sublevel Primary Class
+@number 10
+@description ""
+@caption ""

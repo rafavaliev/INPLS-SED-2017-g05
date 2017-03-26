@@ -1,0 +1,16 @@
+package icrash.concepts.primarytypes.datatypes.operations.datatypes.dtSurveyID.is {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.datatypes.dtSurveyID.is():ptBoolean{
+	postF {
+				result = true
+	}
+		}
+	}
+}

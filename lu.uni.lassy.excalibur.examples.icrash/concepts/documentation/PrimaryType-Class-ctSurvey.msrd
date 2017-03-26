@@ -1,0 +1,24 @@
+/*
+@author morse
+@date Mon Mar 06 15:19:50 MSK 2017
+*/
+
+
+@@Primary Type Class icrash.concepts.primarytypes.classes.ctSurvey
+@description ""
+@attribute
+icrash.concepts.primarytypes.classes.ctSurvey.id
+""
+@attribute
+icrash.concepts.primarytypes.classes.ctSurvey.status
+""
+@attribute
+icrash.concepts.primarytypes.classes.ctSurvey.startTime
+""
+@attribute icrash.concepts.primarytypes.classes.ctSurvey.crisis
+" "
+@endAttributes
+@operation
+icrash.concepts.primarytypes.classes.ctSurvey.init
+""
+@endOperations

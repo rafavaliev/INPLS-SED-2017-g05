@@ -1,0 +1,17 @@
+package icrash.concepts.primarytypes.classes.operations.classes.ctSurveyQuestion.init {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+	Operation Model {
+
+		operation: icrash.concepts.primarytypes.classes.ctSurveyQuestion.init(Asurvey:dtSurveyID, Aquestion:dtSurveyQuestion, Ahuman:ctHuman, Amark:dtMark):ptBoolean{
+		postF {
+				result = true
+	}
+
+		}
+	}
+}

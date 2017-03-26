@@ -1,0 +1,13 @@
+/*
+@author morse
+@date Mon Mar 06 15:57:05 MSK 2017
+*/
+
+
+@@view cm-pt-ct-lv-02-survey
+@model Concept 
+@level Local
+@sublevel Primary Class
+@number 12
+@description ""
+@caption ""
