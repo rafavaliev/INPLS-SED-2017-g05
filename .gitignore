@@ -1,1 +1,32 @@
-lu.uni.lassy.excalibur.standard.report.libraries
+# Eclipse settings
+/.metadata/
+
+# Standart libraries
+/lu.*/
+
+# makeglossaries
+.externalToolBuilders/
+.project
+
+# Temporary files
+tmp-latex/*
+*.aux
+*.dvi
+*.lof
+*.log
+*.out
+*.ps
+*.toc
+*.glo
+*.glsdefs
+*.idx
+*.lol
+*.maf
+*.mtc0
+*.mtc1
+*.mtc
+*.xdy
+
+# Generated PDF
+*.pdf
+
