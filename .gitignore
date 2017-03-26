@@ -1,31 +1,32 @@
-lu.uni.lassy.excalibur.standard.report.libraries
+# Eclipse settings
+/.metadata/
 
-lu\.uni\.lassy\.excalibur\.myproject/
+# Standart libraries
+/lu.*/
 
-lu\.uni\.lassy\.excalibur\.examples\.icrash\.dev\.desktop\.java\.client/
+# makeglossaries
+.externalToolBuilders/
+.project
 
-lu\.uni\.lassy\.excalibur\.examples\.icrash\.dev\.desktop\.java\.commons/
-
-lu\.uni\.lassy\.excalibur\.examples\.icrash\.dev\.desktop\.java\.database/
-
-lu\.uni\.lassy\.excalibur\.examples\.icrash\.dev\.desktop\.java\.server/
-
-*.pdf
-
+# Temporary files
+tmp-latex/*
+*.aux
+*.dvi
+*.lof
+*.log
+*.out
+*.ps
 *.toc
-
+*.glo
+*.glsdefs
+*.idx
+*.lol
+*.maf
+*.mtc0
+*.mtc1
+*.mtc
 *.xdy
 
-lu\.uni\.lassy\.excalibur\.standard\.specification\.libraries\.report/\.project
+# Generated PDF
+*.pdf
 
-*.aux
-
-*.dvi
-
-*.glo
-
-*.glsdefs
-
-*.idx
-
-*.log
