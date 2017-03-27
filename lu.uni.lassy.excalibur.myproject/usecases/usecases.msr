@@ -1,0 +1,84 @@
+
+/*
+* @author timur
+* @date Fri Feb 10 20:42:17 MSK 2017
+*/
+package lu.uni.lassy.excalibur.myproject.usecases {
+	import lu.uni.lassy.messir.libraries.calendar
+	import lu.uni.lassy.messir.libraries.math
+	import lu.uni.lassy.messir.libraries.primitives
+	import lu.uni.lassy.messir.libraries.string
+	
+	import lu.uni.lassy.excalibur.myproject.environment
+
+	Use Case Model {
+		
+		use case system subfunction oeEnterPinCode() {
+			actor actUser[primary,active]
+//			actor actBank[secondary]
+			returned messages {
+				ieMessage(AMessage) returned to actUser
+			}
+		}
+		
+		use case system subfunction oeChooseCurrency() {
+			actor actUser[primary,active]
+			returned messages {
+				ieMessage(AMessage) returned to actUser
+			}
+		}
+		
+//		use case system subfunction sfDisplayBalanceInChosenCurrency() {
+//			actor actBank[primary,active]
+//		}
+
+		use case system subfunction oeLogout() {
+			actor actUser[primary,active]
+			returned messages {
+				ieMessage(AMessage) returned to actUser
+				ieCardAppeared() returned to actUser
+			}
+		}
+
+		use case system usergoal ugViewBalance() {
+			actor actUser[primary,active]
+			reuse oeEnterPinCode[1..3]
+			reuse oeChooseCurrency[1..1]
+			reuse oeLogout[1..1]
+//			reuse sfDisplayBalanceInChosenCurrency[1..1]
+			
+			step a: actUser executes oeEnterPinCode()
+			
+			step b: actUser executes oeChooseCurrency()
+			
+			step c: actUser executes oeLogout()
+			
+//			step c: actBank executes sfDisplayBalanceInChosenCurrency()
+		}
+		
+		use case system subfunction oeEnterTheAmountOfMoney() {
+			actor actUser[primary,active]
+			returned messages {
+				ieMessage(AMessage) returned to actUser
+				ieMoneyAppeared() returned to actUser
+			}
+		}
+		
+		use case system usergoal ugWithdraw() {
+			actor actUser[primary,active]
+			reuse oeEnterPinCode[1..3]
+			reuse oeChooseCurrency[1..1]
+			reuse oeEnterTheAmountOfMoney[1..1]
+			reuse oeLogout[1..1]
+			
+			step a: actUser executes oeEnterPinCode()
+			
+			step b: actUser executes oeChooseCurrency()
+			
+			step c: actUser executes oeEnterTheAmountOfMoney()
+			
+			step d: actUser executes oeLogout()
+			
+		}
+	}
+}

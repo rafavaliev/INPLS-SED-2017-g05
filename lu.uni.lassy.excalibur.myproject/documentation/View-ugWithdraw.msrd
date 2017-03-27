@@ -1,0 +1,10 @@
+/*
+@author timur
+@date Sat Feb 11 16:29:23 MSK 2017
+*/
+
+
+@@view ugWithdraw
+@model Use-Case lu.uni.lassy.excalibur.myproject.usecases.ugWithdraw 
+@description ""
+@caption ""

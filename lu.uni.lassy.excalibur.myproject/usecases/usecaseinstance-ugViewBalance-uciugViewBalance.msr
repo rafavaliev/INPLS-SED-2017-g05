@@ -1,0 +1,47 @@
+package usecases.uciugViewBalance {
+	import lu.uni.lassy.excalibur.myproject.usecases
+	import lu.uni.lassy.excalibur.myproject.environment
+
+	Use Case Model {
+
+		use case instance uciugViewBalance:ugViewBalance {
+			actors {
+				user1:actUser
+			}
+			use case steps {
+				user1 executed instanceof subfunction oeEnterPinCode("1357") {
+					ieMessage("The pin code is correct. Welcome!") returned to user1
+				}
+				user1 executed instanceof subfunction oeChooseCurrency("USD") {
+					ieMessage("Your balance is 40$.") returned to user1
+				}
+				user1 executed instanceof subfunction oeLogout() {
+					ieMessage("You are logged out. Take your card!") returned to user1
+					ieCardAppeared() returned to user1
+				}
+			}
+		}
+
+		use case instance uciugWithdraw:ugWithdraw {
+			actors {
+				user1:actUser
+			}
+			use case steps {
+				user1 executed instanceof subfunction oeEnterPinCode("2468") {
+					ieMessage("The pin code is correct. Welcome!") returned to user1
+				}
+				user1 executed instanceof subfunction oeChooseCurrency("USD") {
+					ieMessage("Enter the amount of money you want to withdraw") returned to user1
+				}
+				user1 executed instanceof subfunction oeEnterTheAmountOfMoney("35") {
+					ieMessage("There is enough money on you card. Please take them...") returned to user1
+					ieMoneyAppeared() returned to user1
+				}
+				user1 executed instanceof subfunction oeLogout() {
+					ieMessage("You are logged out. Take your card!") returned to user1
+					ieCardAppeared() returned to user1
+				}
+			}
+		}
+	}
+}
