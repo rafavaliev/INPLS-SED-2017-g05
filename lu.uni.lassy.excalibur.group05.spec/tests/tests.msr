@@ -1,0 +1,19 @@
+/*
+* @author morse
+* @date Mon Mar 06 14:20:44 MSK 2017
+*/
+
+package lu.uni.lassy.excalibur.spec.tests {
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
+
+
+
+	Test Model {
+		
+	}
+
+}

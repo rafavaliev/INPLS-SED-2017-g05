@@ -1,0 +1,43 @@
+\BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{1.1 Overview}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{1.2 Purpose and recipients of the document}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{1.3 Definitions, acronyms and abbreviations}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{1.4 Document structure}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{2 Analysis Models}{}% 6
+\BOOKMARK [1][-]{section.2.1}{2.1 Concept Model}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{2.2 Environment Model}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{3 Technological frameworks}{}% 9
+\BOOKMARK [1][-]{section.3.1}{3.1 Java}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.2}{3.2 Eclipse}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.3}{3.3 MySQL}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.4}{3.4 MySQL Workbench}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.5}{3.5 JavaFX}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.6}{3.6 Scene Builder}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.7}{3.7 Remote Method Invocation \(RMI\)}{chapter.3}% 16
+\BOOKMARK [0][-]{chapter.4}{4 System Architecture}{}% 17
+\BOOKMARK [1][-]{section.4.1}{4.1 Deployment view}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.2}{4.2 Implementation view}{chapter.4}% 19
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Component xx.yy.zz.c1}{section.4.2}% 20
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Component xx.yy.zz.c2}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Component xx.yy.zz.c3}{section.4.2}% 22
+\BOOKMARK [1][-]{section.4.3}{4.3 UI Processing view}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 UI Processing view for system operation oeSystemOperation1}{section.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 UI Processing view for system operation oeSystemOperation2}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 UI Processing view for system operation oeSystemOperation3}{section.4.3}% 26
+\BOOKMARK [1][-]{section.4.4}{4.4 Non-functional runtime concerns}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Performance}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Concurrency and Parallelism}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Scalability}{section.4.4}% 30
+\BOOKMARK [0][-]{chapter.5}{5 Detailed design}{}% 31
+\BOOKMARK [1][-]{section.5.1}{5.1 Interaction Model}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 oeSystemOperation1}{section.5.1}% 33
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 oeSystemOperation2}{section.5.1}% 34
+\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 oeSystemOperation3}{section.5.1}% 35
+\BOOKMARK [1][-]{section.5.2}{5.2 Design Class Model}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Design Class Model view1}{section.5.2}% 37
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Design Class Model view2}{section.5.2}% 38
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Design Class Model view3}{section.5.2}% 39
+\BOOKMARK [0][-]{chapter.6}{6 Known limitations}{}% 40
+\BOOKMARK [1][-]{section.6.1}{6.1 Issue 1}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{6.2 Issue 2}{chapter.6}% 42
+\BOOKMARK [0][-]{chapter.7}{7 Conclusion}{}% 43

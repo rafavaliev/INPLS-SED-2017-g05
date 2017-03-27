@@ -1,0 +1,15 @@
+package lu.uni.lassy.excalibur.spec.concepts.primarytypes.classes.operations.classes.ctState.init {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+	Operation Model {
+
+		operation: lu.uni.lassy.excalibur.spec.concepts.primarytypes.classes.ctState.init(AvpStarted:null):null{
+		// include below the specification information (pre,post or ocl or prolog)
+
+		}
+	}
+}
