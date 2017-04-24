@@ -496,6 +496,9 @@
   <semanticResources>environment/documentation/Operation-actAdministrator-outactAdministrator-oeShowQA.msrd</semanticResources>
   <semanticResources>usecases/documentation/UseCase-ugMonitorQualityInsurance.msrd</semanticResources>
   <semanticResources>usecases/usecaseinstance-ugMonitorQualityInsurance-uciugMonitorQualityInsurance.msr</semanticResources>
+  <semanticResources>usecases/documentation/UseCase-oeMonitorOverallQualityInsurence.msrd</semanticResources>
+  <semanticResources>usecases/documentation/UseCase-oeMonitorQualityInsurenceForCrisis.msrd</semanticResources>
+  <semanticResources>usecases/documentation/UseCaseInstance-uciugMonitorQualityInsurance.msrd</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" xmi:id="_VxVZ4PWqEeSOM9Kfym77Zg">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
   </ownedViews>
