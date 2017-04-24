@@ -41,6 +41,10 @@ import lu.uni.lassy.messir.libraries.calendar
 											
 				operation oeDeleteCoordinator(
 											AdtCoordinatorID:dtCoordinatorID ):ptBoolean
+											
+				operation oeMonitorOverallQualityInsurence(AdtSurveyQuestion:dtSurveyQuestion) : ptBoolean
+				
+				operation oeMonitorQualityInsurenceForCrisis(AdtSurveyQuestion:dtSurveyQuestion,AdtCrisisId:dtCrisisID) : ptBoolean
 			}
 			
 			input interface inactAdministrator{

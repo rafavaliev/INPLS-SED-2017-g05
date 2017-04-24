@@ -482,6 +482,20 @@
   <semanticResources>operations/environment/environment-actAuthenticated-init.msr</semanticResources>
   <semanticResources>operations/environment/environment-actActivator-init.msr</semanticResources>
   <semanticResources>operations/concepts/secondarytypes-datatypes/secondarytypes-datatypes-dtSMS-is1.msr</semanticResources>
+  <semanticResources>concepts/documentation/PrimaryType-Class-ctSurveyQuestion.msrd</semanticResources>
+  <semanticResources>concepts/documentation/PrimaryType-Datatype-dtMark.msrd</semanticResources>
+  <semanticResources>concepts/documentation/PrimaryType-Datatype-dtSurveyID.msrd</semanticResources>
+  <semanticResources>concepts/documentation/PrimaryType-Datatype-dtSurveyQuestion.msrd</semanticResources>
+  <semanticResources>concepts/documentation/PrimaryType-Enumeration-etSurveyStatus.msrd</semanticResources>
+  <semanticResources>environment/documentation/Operation-actAdministrator-outactAdministrator-oeMonitorOverallQualityInsurence.msrd</semanticResources>
+  <semanticResources>concepts/documentation/Operation-ctSurvey-init.msrd</semanticResources>
+  <semanticResources>concepts/documentation/PrimaryType-Datatype-dtPasswordHash.msrd</semanticResources>
+  <semanticResources>concepts/documentation/Operation-ctSurveyQuestion-init.msrd</semanticResources>
+  <semanticResources>concepts/documentation/Operation-dtMark-is.msrd</semanticResources>
+  <semanticResources>environment/documentation/Operation-actAdministrator-outactAdministrator-oeMonitorQualityInsurenceForCrisis.msrd</semanticResources>
+  <semanticResources>environment/documentation/Operation-actAdministrator-outactAdministrator-oeShowQA.msrd</semanticResources>
+  <semanticResources>usecases/documentation/UseCase-ugMonitorQualityInsurance.msrd</semanticResources>
+  <semanticResources>usecases/usecaseinstance-ugMonitorQualityInsurance-uciugMonitorQualityInsurance.msr</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" xmi:id="_VxVZ4PWqEeSOM9Kfym77Zg">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
   </ownedViews>

@@ -13,5 +13,14 @@ package icrash.usecases.ugMonitor {
       step a: icrash.environment.actCoordinator executes oeGetAlertsSet
       step b: icrash.environment.actCoordinator executes oeGetCrisisSet
     }
+	use case system usergoal ugMonitorQualityInsurance() {
+		actor icrash.environment.actAdministrator[primary,active]
+		
+		reuse oeMonitorOverallQualityInsurence[0..*]
+		reuse oeMonitorQualityInsurenceForCrisis[0..*]
+		
+		step a: icrash.environment.actAdministrator executes oeMonitorOverallQualityInsurence
+		step b: icrash.environment.actAdministrator executes oeMonitorQualityInsurenceForCrisis
+		}
 	}
 }

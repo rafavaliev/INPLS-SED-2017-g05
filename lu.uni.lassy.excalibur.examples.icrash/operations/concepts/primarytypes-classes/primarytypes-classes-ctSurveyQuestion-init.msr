@@ -4,10 +4,12 @@ import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.string
 import lu.uni.lassy.messir.libraries.calendar
+import icrash.concepts.primarytypes.datatypes
+import icrash.concepts.primarytypes.classes
 
 	Operation Model {
 
-		operation: icrash.concepts.primarytypes.classes.ctSurveyQuestion.init(Asurvey:dtSurveyID, Aquestion:dtSurveyQuestion, Ahuman:ctHuman, Amark:dtMark):ptBoolean{
+		operation: icrash.concepts.primarytypes.classes.ctSurveyQuestion.init(Asurvey:icrash.concepts.primarytypes.datatypes.dtSurveyID, Aquestion:dtSurveyQuestion, Ahuman:ctHuman, Amark:dtMark):ptBoolean{
 		postF {
 				result = true
 	}

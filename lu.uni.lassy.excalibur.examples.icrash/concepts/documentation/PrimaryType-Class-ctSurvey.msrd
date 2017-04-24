@@ -5,7 +5,7 @@
 
 
 @@Primary Type Class icrash.concepts.primarytypes.classes.ctSurvey
-@description ""
+@description "represents state of QA survey on some crisis"
 @attribute
 icrash.concepts.primarytypes.classes.ctSurvey.id
 ""
