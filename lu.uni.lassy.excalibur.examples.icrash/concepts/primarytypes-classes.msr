@@ -83,8 +83,6 @@ package icrash.concepts.primarytypes.classes {
 				operation init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean
 			}
 
-		datatype dtSurveyID {
-			}
 		}
 	}
 }

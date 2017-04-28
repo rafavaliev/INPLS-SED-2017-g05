@@ -3,6 +3,7 @@ package icrash.concepts.primarytypes.classes.operations.classes.ctSurvey.init {
 	import lu.uni.lassy.messir.libraries.math
 	import lu.uni.lassy.messir.libraries.string
 	import lu.uni.lassy.messir.libraries.calendar
+	import icrash.concepts.primarytypes.datatypes
 
 	Operation Model {
 
